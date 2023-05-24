@@ -22,7 +22,15 @@
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
+    "@nestjs/jwt": "^10.0.3",
     "@nestjs/platform-express": "^9.0.0",
+    "@prisma/client": "^4.14.1",
+    "bcrypt": "^5.1.0",
+    "nestjs-zod": "^2.3.2",
+    "passport": "^0.6.0",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^4.0.1",
+    "prisma": "^4.15.0-integration-windows-portability.6",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
