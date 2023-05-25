@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Solicitação de Reembolso de Despesas</title>
+        <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../css/cadastro-reembolsos.css"
+        />
+    </head>
+    <body>
+        <h1>Solicitação de Reembolso de Despesas</h1>
+
+        <form id="expense-form">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                        >Descrição</span
+                    >
+                </div>
+                <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Description"
+                    aria-describedby="basic-addon1"
+                />
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                        >Valor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                    >
+                </div>
+                <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Value"
+                    aria-describedby="basic-addon1"
+                />
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                        >Data &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                    >
+                </div>
+                <input
+                    type="date"
+                    class="form-control"
+                    aria-label="Data"
+                    aria-describedby="basic-addon1"
+                />
+            </div>
+            <button class="btn btn-primary" type="submit">Solicitar</button>
+        </form>
+        <!-- <script src="script.js"></script> -->
+    </body>
+</html>
