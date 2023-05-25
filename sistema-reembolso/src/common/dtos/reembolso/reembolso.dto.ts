@@ -1,4 +1,4 @@
-import { FuncionarioDTO } from '../funcionario/funcionario.dto';
+import { PessoaDTO } from '../pessoa/pessoa.dto';
 
 export class ReembolsoDTO {
   id: string;
@@ -8,8 +8,8 @@ export class ReembolsoDTO {
   isAprovado: boolean;
   dataCriacao: Date;
   dataConclusao?: Date;
-  gerente?: GerenteDTO;
+  gerente?: PessoaDTO;
   gerenteId?: string;
-  funcionario: FuncionarioDTO;
+  funcionario: PessoaDTO;
   funcionarioId: string;
 }

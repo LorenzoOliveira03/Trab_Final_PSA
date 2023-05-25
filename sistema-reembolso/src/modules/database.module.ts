@@ -5,6 +5,6 @@ import { PrismaService } from '../common/database/database.service';
   imports: [],
   controllers: [],
   providers: [PrismaService],
-  exports: [],
+  exports: [PrismaService],
 })
 export class DatabaseModule {}
