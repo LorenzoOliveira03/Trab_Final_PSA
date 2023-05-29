@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
+        <meta charset="UTF-8" />
         <title>Página de Login</title>
         <!-- <link rel="stylesheet" type="text/css" href="login-style.css" /> -->
         <link
@@ -12,41 +13,47 @@
         <link rel="stylesheet" type="text/css" href="../css/login-style.css" />
     </head>
     <body>
-        <div class="container">
-            <h1>Bem-vindo</h1>
+        <div class="row">
+            <div class="w-100">
+                <h1 class="title">Bem-vindo</h1>
 
-            <form id="login-form">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"
-                            >Username</span
-                        >
+                <form id="login-form" class="container">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                                >Usuário</span
+                            >
+                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="John Doe"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            required
+                        />
                     </div>
-                    <input
-                        type="text"
-                        class="form-control"
-                        placeholder="John Doe"
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                    />
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"
-                            >Password&nbsp;</span
-                        >
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                                >Senha &nbsp;</span
+                            >
+                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="••••••••••"
+                            aria-label="Password"
+                            aria-describedby="basic-addon1"
+                            required
+                        />
                     </div>
-                    <input
-                        type="text"
-                        class="form-control"
-                        placeholder="••••••••••"
-                        aria-label="Password"
-                        aria-describedby="basic-addon1"
-                    />
-                </div>
 
-                <button class="btn btn-outline-primary" type="submit">Enter</button>
-            </form>
+                    <button class="btn btn-outline-primary" type="submit">
+                        Entrar
+                    </button>
+                </form>
+            </div>
         </div>
 
         <script src="script.js"></script>

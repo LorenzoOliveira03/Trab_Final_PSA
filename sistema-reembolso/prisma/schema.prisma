@@ -17,11 +17,14 @@ model Pessoa {
   email      String      @unique
   password   String
   profile    String      @default("Pessoa")
-  ReembolsaF Reembolsa[] @relation("funcionario")
-  ReembolsaG Reembolsa[] @relation("gerente")
+  code       String?     @unique
+  ReembolsaF Reembolso[] @relation("funcionario")
+  ReembolsaG Reembolso[] @relation("gerente")
+
+  @@map("pessoas")
 }
 
-model Reembolsa {
+model Reembolso {
   id             String    @id @default(auto()) @map("_id") @db.ObjectId
   nProtocolo     String    @unique
   valorReembolso Float
@@ -33,4 +36,6 @@ model Reembolsa {
   gerente        Pessoa?   @relation(fields: [gerenteId], references: [id], name: "gerente")
   funcionarioId  String?   @db.ObjectId
   gerenteId      String?   @db.ObjectId
+
+  @@map("reembolsos")
 }

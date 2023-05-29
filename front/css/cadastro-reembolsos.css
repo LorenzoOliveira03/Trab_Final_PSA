@@ -1,28 +1,38 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .container {
+}
+
+.title {
+    max-width: 500px;
+    padding-bottom: 40px;
+}
+
+.container {
     max-width: 400px;
-  }
-  
-  h1 {
+}
+
+h1 {
     text-align: center;
-  }
-  
-  #expense-form {
+}
+
+#expense-form {
     margin-top: 20px;
-  }
-  
-  .input-group {
+}
+
+.input-group {
     margin-bottom: 15px;
-  }
-  
-  .btn-primary {
+}
+
+.btn-outline-primary {
     width: 100%;
-  }
-  
+}
+
+/* .dropdown {
+    margin-bottom: 15px;
+    background-color: #e9ecef;
+} */

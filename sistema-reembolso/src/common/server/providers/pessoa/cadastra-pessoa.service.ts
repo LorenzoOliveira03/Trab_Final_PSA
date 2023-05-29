@@ -21,6 +21,7 @@ export class CadastraPessoaService {
       },
     });
 
+    console.log(pessoa + '     salvo com sucesso');
     return pessoa;
   }
 }

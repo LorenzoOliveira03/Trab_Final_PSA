@@ -1,26 +1,22 @@
 html,
 body {
     height: 100%;
+    width: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1 {
+.h1 {
     margin-bottom: 20px;
 }
 
-#pending-table {
+/*
+.btn-outline-primary {
     width: 100%;
 }
+*/
 
 @media (max-width: 768px) {
     .container {

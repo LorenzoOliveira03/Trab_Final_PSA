@@ -7,8 +7,13 @@ body {
     align-items: center;
 }
 
+.title {
+    max-width: 500px;
+    padding-bottom: 40px;
+}
+
 .container {
-    max-width: 400px;
+    max-width: 600px;
 }
 
 h1 {
@@ -23,7 +28,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-.btn-primary {
+.btn-outline-primary {
     width: 100%;
 }
 

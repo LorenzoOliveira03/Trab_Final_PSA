@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
+        <meta charset="UTF-8" />
         <title>Solicitação de Reembolso de Despesas</title>
         <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
         <link
@@ -14,54 +15,76 @@
             type="text/css"
             href="../css/cadastro-reembolsos.css"
         />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
-        <h1>Solicitação de Reembolso de Despesas</h1>
+        <div class="row">
+            <div class="w-100">
+                <h1 class="title">Solicitação de Reembolso de Despesas</h1>
 
-        <form id="expense-form">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                        >Descrição</span
-                    >
-                </div>
-                <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Description"
-                    aria-describedby="basic-addon1"
-                />
-            </div>
+                <form id="expense-form" class="container">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                                >Valor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                                &nbsp;&nbsp</span
+                            >
+                        </div>
+                        <input
+                            id="Valor"
+                            type="number"
+                            min="0.00"
+                            max="10000.00"
+                            step="0.01"
+                            class="form-control"
+                            aria-label="Value"
+                            aria-describedby="basic-addon1"
+                            required
+                        />
+                    </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                        >Valor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
-                    >
-                </div>
-                <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Value"
-                    aria-describedby="basic-addon1"
-                />
-            </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                                >Descrição&nbsp;&nbsp;&nbsp</span
+                            >
+                        </div>
+                        <textarea
+                            id="Descricao"
+                            type="text"
+                            class="form-control"
+                            aria-label="Description"
+                            aria-describedby="basic-addon1"
+                            required
+                        ></textarea>
+                    </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                        >Data &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                                >Cod. do Funcionario
+                            </span>
+                        </div>
+                        <input
+                            id="CodFuncionario"
+                            type="text"
+                            class="form-control"
+                            aria-label="Funcionario"
+                            aria-describedby="basic-addon1"
+                            required
+                        />
+                    </div>
+                    <button
+                        id="btn-submit"
+                        class="btn btn-outline-primary"
+                        type="submit"
                     >
-                </div>
-                <input
-                    type="date"
-                    class="form-control"
-                    aria-label="Data"
-                    aria-describedby="basic-addon1"
-                />
+                        Solicitar
+                    </button>
+                </form>
             </div>
-            <button class="btn btn-primary" type="submit">Solicitar</button>
-        </form>
-        <!-- <script src="script.js"></script> -->
+        </div>
+
+        <script src="../javascript/cadastro-reembolso.js"></script>
     </body>
 </html>

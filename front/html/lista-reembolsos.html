@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <meta charset="UTF-8" />
         <title>Solicitação de Reembolso de Despesas</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <link
@@ -16,39 +17,45 @@
         />
     </head>
     <body>
-        <h1>Relatório de Reembolsos</h1>
+        <div class="row">
+            <div class="w-100">
+                <h1 class="title">Relatório de Reembolsos</h1>
 
-        <form id="expense-form">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                        >Data Início</span
-                    >
-                </div>
-                <input
-                    type="text"
-                    class="form-control"
-                    aria-label="BeginDate"
-                    aria-describedby="basic-addon1"
-                />
+                <form id="expense-form" class="container">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                                >Data Início &nbsp;&nbsp;&nbsp;</span
+                            >
+                        </div>
+                        <input
+                            type="date"
+                            class="form-control"
+                            aria-label="BeginDate"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                                >Data Término</span
+                            >
+                        </div>
+                        <input
+                            type="date"
+                            class="form-control"
+                            aria-label="EndDate"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+
+                    <button class="btn btn-outline-primary" type="submit">
+                        Visualizar
+                    </button>
+                </form>
             </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                        >Data Término</span
-                    >
-                </div>
-                <input
-                    type="text"
-                    class="form-control"
-                    aria-label="EndDate"
-                    aria-describedby="basic-addon1"
-                />
-            </div>
-
-            <button class="btn btn-primary" type="submit">Visualizar</button>
-        </form>
+        </div>
 
         <div id="report">
             <!-- O relatório será exibido dinamicamente aqui -->
