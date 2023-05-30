@@ -4,10 +4,20 @@ import { CadastraReembolsoService } from '../common/server/providers/reembolso/c
 import { DatabaseModule } from './database.module';
 import { ListaReembolsoPendenteController } from '../common/server/controllers/reembolso/lista-reembolso-pendente.controller';
 import { ListaReembolsoPendenteService } from '../common/server/providers/reembolso/lista-reembolso-pendente.service';
+import { ListaReembolsoDataService } from '../common/server/providers/reembolso/lista-reembolso-data.service';
+import { ListaReembolsoDataController } from '../common/server/controllers/reembolso/lista-reembolso-data.controller';
 
 @Module({
-  controllers: [CadastraReembolsoController, ListaReembolsoPendenteController],
-  providers: [CadastraReembolsoService, ListaReembolsoPendenteService],
+  controllers: [
+    CadastraReembolsoController,
+    ListaReembolsoPendenteController,
+    ListaReembolsoDataController,
+  ],
+  providers: [
+    CadastraReembolsoService,
+    ListaReembolsoPendenteService,
+    ListaReembolsoDataService,
+  ],
   imports: [DatabaseModule],
   exports: [],
 })

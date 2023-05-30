@@ -20,4 +20,6 @@ form.addEventListener("submit", (event) => {
         descricao: descricao,
         funcionarioId: codFuncionario,
     });
+
+    form.reset();
 });

@@ -29,7 +29,9 @@ async function setDados() {
         const acaoCell = document.createElement("td");
 
         descricaoCell.textContent = dado.descricao;
-        valorCell.textContent = dado.valorReembolso;
+        valorCell.textContent = Number.parseFloat(
+            dado.valorReembolso
+        ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
         const data = formatarData(dado.dataCriacao);
         dataCell.textContent = data;
         // acaoCell.innerHTML = `
