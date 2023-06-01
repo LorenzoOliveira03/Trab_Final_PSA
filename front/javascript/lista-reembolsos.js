@@ -1,20 +1,49 @@
 const form = document.getElementById("expense-form");
 const tbody = document.querySelector(".table tbody");
+const divTable = document.getElementById("div-table");
+const radio0 = document.getElementById("flexRadioDefault0");
+const radio1 = document.getElementById("flexRadioDefault1");
+const radio2 = document.getElementById("flexRadioDefault2");
 
 form.addEventListener("submit", async (event) => {
     document.querySelectorAll("tbody tr").forEach((tr) => tr.remove());
     event.preventDefault();
-    const dataInicio = document.getElementById("begin-date").value;
-    const dataFim = document.getElementById("end-date").value;
+    var dataInicio = document.getElementById("begin-date").value;
+    var dataFim = document.getElementById("end-date").value;
 
-    console.log(dataInicio + " " + dataFim);
+    var isAprovado = "todos";
 
-    console.log("enviando");
+    if (radio1.checked) {
+        isAprovado = "true";
+    } else if (radio2.checked) {
+        isAprovado = "false";
+    }
+
+    if (dataInicio == "") {
+        console.log("entrou");
+        dataInicio = "01-01-2000";
+    }
+
+    if (dataFim == "") {
+        const dataAgora = new Date(Date.now());
+        dataAgora.setDate(dataAgora.getDate() + 1);
+        dataFim = new Date(dataAgora).toISOString().split("T")[0];
+        // dataFim = dataAgora.toISOString().split("T")[0];
+    }
+    console.log(dataInicio);
+    console.log(dataFim);
     const response = await axios.get(
-        "http://localhost:3000/reembolso/data/" + dataInicio + "/" + dataFim
+        "http://localhost:3000/reembolso/data/" +
+            dataInicio +
+            "/" +
+            dataFim +
+            "/" +
+            isAprovado
     );
 
     const dados = response.data;
+
+    divTable.hidden = false;
 
     for (let index = 0; index < dados.length; index++) {
         const dado = dados[index];

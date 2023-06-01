@@ -5,11 +5,12 @@ import { ListaReembolsoDataService } from '../../providers/reembolso/lista-reemb
 export class ListaReembolsoDataController {
   constructor(private readonly service: ListaReembolsoDataService) {}
 
-  @Get(':dataInicio/:dataFim')
+  @Get(':dataInicio/:dataFim/:isAprovado')
   async getListaReembolsoData(
     @Param('dataInicio') dataInicio: string,
     @Param('dataFim') dataFim: string,
+    @Param('isAprovado') isAprovado: string,
   ) {
-    return await this.service.getListaReembolsoData(dataInicio, dataFim);
+    return await this.service.getListaReembolsoData(dataInicio, dataFim, isAprovado);
   }
 }
