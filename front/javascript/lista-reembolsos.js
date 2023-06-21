@@ -63,9 +63,18 @@ form.addEventListener("submit", async (event) => {
         ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
         const data = formatarData(dado.dataCriacao);
         dataCell.textContent = data;
-        boolCell.textContent =
-            dado.isAprovado == true ? "Aprovado" : "Aguardando";
-        dataFimCell.textContent = dado.dataFim ? dado.dataFim : "Aguardando";
+
+        if (dado.isAprovado == true) {
+            boolCell.textContent = "Aprovado";
+        } else {
+            boolCell.textContent =
+                dado.dataConclusao != null ? "Reprovado" : "Aguardando";
+        }
+
+        dataFimCell.textContent =
+            dado.dataConclusao != null
+                ? formatarData(dado.dataConclusao)
+                : "Aguardando";
 
         row.appendChild(protocoloCell);
         row.appendChild(descricaoCell);

@@ -10,17 +10,30 @@ form.addEventListener("submit", (e) => {
     }
 
     if (email !== "" && password !== "") {
-        (async () => {
-            console.log("here");
-            const accessToken = await axios.post(
-                "http://localhost:3000/login",
-                {
-                    username: email,
-                    password: password,
+        try {
+            (async () => {
+                console.log("here");
+                const accessToken = await axios.post(
+                    "http://localhost:3000/login",
+                    {},
+                    {
+                        auth: {
+                            username: email,
+                            password: password,
+                        },
+                    }
+                );
+                console.log(accessToken);
+                if (accessToken != null) {
+                    window.location.href =
+                        "http://127.0.0.1:5500/front/html/reembolso-pendente.html";
                 }
-            );
-            console.log(accessToken);
-            return accessToken;
-        })();
+                return accessToken;
+            })();
+        } catch (error) {
+            alert("Invalid credentials");
+        }
     }
+
+    e.preventDefault();
 });

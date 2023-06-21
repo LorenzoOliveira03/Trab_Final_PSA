@@ -35,3 +35,10 @@ h1 {
 #report {
     text-align: center;
 }
+
+#buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}

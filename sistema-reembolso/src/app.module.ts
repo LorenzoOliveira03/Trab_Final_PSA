@@ -14,10 +14,10 @@ import { HttpAuthGuard } from './common/guard/http-auth.guard';
       provide: 'APP_GUARD',
       useClass: JwtAuthGuard,
     },
-    {
-      provide: 'APP_GUARD',
-      useClass: HttpAuthGuard,
-    },
+    // {
+    //   provide: 'APP_GUARD',
+    //   useClass: HttpAuthGuard,
+    // },
   ],
 })
 export class AppModule {}

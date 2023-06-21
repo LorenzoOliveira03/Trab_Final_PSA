@@ -11,7 +11,7 @@ export class ListaReembolsoDataService {
     dataFimStr: string,
     isAprovado: string,
   ) {
-    var reembolsos: Reembolso[];
+    let reembolsos: Reembolso[];
     const dataInicio = new Date(dataInicioStr);
     const dataFim = new Date(dataFimStr);
     if (dataInicio && dataFim) {

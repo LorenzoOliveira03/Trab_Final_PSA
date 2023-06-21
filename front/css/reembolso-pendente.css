@@ -9,8 +9,21 @@ body {
 }
 
 .h1 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
+
+/* #buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-cadastrar {
+    width: 15%;
+    margin: 0 auto;
+    padding: auto;
+    margin-bottom: 20px;
+} */
 
 /*
 .btn-outline-primary {

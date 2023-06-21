@@ -3,6 +3,7 @@ async function getDados() {
     const response = await axios.get(
         "http://localhost:3000/reembolso/pendente"
     );
+    console.log("data", response.data);
     return response.data;
 }
 
@@ -16,8 +17,10 @@ function formatarData(data) {
     return `${dia}/${mes}/${ano}`;
 }
 
+var dados;
+
 async function setDados() {
-    const dados = await getDados();
+    dados = await getDados();
 
     for (let index = 0; index < dados.length; index++) {
         const dado = dados[index];
@@ -35,12 +38,16 @@ async function setDados() {
         const data = formatarData(dado.dataCriacao);
         dataCell.textContent = data;
         // acaoCell.innerHTML = `
-        //   <button type="button" class="btn btn-success">Aprovar</button>
-        //   <button type="button" class="btn btn-danger">Reprovar</button>
+        //   <button type="button" class="btn btn-success" id="btn-success${index}">Aprovar</button>
+        //   <button type="button" class="btn btn-danger" id="btn-danger${index}">Reprovar</button>
         // `;
-        acaoCell.textContent =
-            dado.isAprovado == true ? "Aprovado" : "Aguardando";
 
+        if (dado.isAprovado == true) {
+            acaoCell.textContent = "Aprovado";
+        } else {
+            acaoCell.textContent =
+                dado.dataConclusao != null ? "Reprovado" : "Aguardando";
+        }
         row.appendChild(descricaoCell);
         row.appendChild(valorCell);
         row.appendChild(dataCell);

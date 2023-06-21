@@ -15,7 +15,9 @@ export default class LoginService {
         profile: pessoa.profile,
       };
 
-      const jwtToken = this.jwtService.sign(payload);
+      const jwtToken = this.jwtService.sign(payload, {
+        secret: process.env.SECRET_KEY,
+      });
       // const token = jwt.sign(
       //     {
       //         id: elderly.id,

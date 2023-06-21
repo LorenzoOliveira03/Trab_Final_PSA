@@ -9,6 +9,8 @@ import { JwtModule, JwtService } from '@nestjs/jwt';
 import { PessoaModule } from './pessoa.module';
 import { RetornaPessoaPorEmailService } from '../common/server/providers/pessoa/retorna-pessoa-por-email.service';
 import { HttpStrategy } from '../common/strategy/http.strategy';
+import { AuthenticateGerenteController } from '../common/server/controllers/login/authenticate-gerente.controller';
+import { AuthenticateGerenteService } from '../common/server/providers/login/authenticate-gerente.service';
 @Module({
   imports: [
     DatabaseModule,
@@ -19,13 +21,14 @@ import { HttpStrategy } from '../common/strategy/http.strategy';
       signOptions: { expiresIn: '10d' },
     }),
   ],
-  controllers: [AuthenticationController],
+  controllers: [AuthenticationController, AuthenticateGerenteController],
   providers: [
     LoginService,
     AuthenticationService,
     JwtService,
     RetornaPessoaPorEmailService,
     HttpStrategy,
+    AuthenticateGerenteService,
   ],
 })
 export class AuthModule {}
